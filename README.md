@@ -17,6 +17,6 @@ Just run `go build .`
 # Usage
 
 Basically it's just `./hyperudp <Hyperion IP>`  
-This, by default, opens a UDP socket on port `1337`. Any color data sent there should appear as a vide feed in Hyperion and thus on your connected RGB devices
+This, by default, opens a UDP socket on port `1337`. Any color data sent there should appear as a video feed in Hyperion and thus on your connected RGB devices
 
 For more advanced settings please see `./hyperudp --help`
