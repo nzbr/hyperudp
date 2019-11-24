@@ -15,7 +15,9 @@ jobs:
         - name: Check out code into the Go module directory
           uses: actions/checkout@v1
         - name: Build
-          run: go build -v .
+          run: |
+            go mod download
+            go build -v .
         - run: |
             mkdir build
             cp hyperudp* build/
