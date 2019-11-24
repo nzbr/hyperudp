@@ -14,13 +14,10 @@ import (
 func send(channel chan []byte, args Args) {
 	var payload []byte
 
-	if debug {
-		log.Println("Connecting to Hyperion...")
-	}
+	log.Println("Connecting to Hyperion...")
+
 	sock := connect(args.IP, args.Port)
-	if debug {
-		log.Println("Connected!")
-	}
+	log.Println("Connected!")
 
 	for {
 		payload = <-channel
@@ -49,7 +46,7 @@ func connect(ip string, port int) net.Conn {
 	next := 10
 
 	for err != nil {
-		if debug && time.Since(start).Seconds() >= float64(next) {
+		if time.Since(start).Seconds() >= float64(next) {
 			log.Printf("Trying to connect for %v seconds\n", next)
 			next += 10
 		}
