@@ -5,7 +5,7 @@
 	<a href="https://actions-badge.atrox.dev/nzbr/hyperudp/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fnzbr%2Fhyperudp%2Fbadge&style=flat" /></a>
     <a href="https://libraries.io/github/nzbr/hyperudp"><img alt="Libraries.io dependency status for GitHub repo" src="https://img.shields.io/librariesio/github/nzbr/hyperudp?label=Dependencies"></a>
 </p>
-A program that converts raw UDP streams to [Hyperion](https://github.com/hyperion-project/hyperion.ng)'s Protocol Buffer format
+A program that converts raw UDP streams to <a href="https://github.com/hyperion-project/hyperion.ng">Hyperion's</a> Protocol Buffer format
 
 Hyperion.ng currently has no way to receive a raw UDP stream itself.  
 For example this can be used to use [ColorChord](https://github.com/cnlohr/colorchord) with Hyperion.ng
