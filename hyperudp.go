@@ -15,7 +15,6 @@ type Args struct {
 	Name       string `help:"Name of this stream un Hyperion"`
 	Priority   int32  `help:"Priority of this stream in Hyperion"`
 	Duration   int32  `help:"How long a single sent frame is displayed if nothing replaces it (in milliseconds)"`
-	UDPTimeout int    `help:"Duration after which, if no packet was received no data will be sent to hyperion (in seconds)"`
 }
 
 //Description provides a short text that tells the user what the program does.
@@ -31,7 +30,6 @@ func main() {
 		Name:       "HyperUDP",
 		Priority:   100,
 		Duration:   1000,
-		UDPTimeout: 2,
 	}
 	arg.MustParse(&args)
 
