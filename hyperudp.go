@@ -1,20 +1,20 @@
 package main
 
 import (
-	"fmt"
 	json "encoding/json"
+	"fmt"
 
 	arg "github.com/alexflint/go-arg"
 )
 
 //Args stores command line argument values
 type Args struct {
-	IP         string `arg:"positional,required" help:"Hyperion Server IP"`
-	Port       int    `help:"Hyperion FlatBuffer Port"`
-	UDPPort    int    `help:"UDP Listen Port"`
-	Name       string `help:"Name of this stream un Hyperion"`
-	Priority   int32  `help:"Priority of this stream in Hyperion"`
-	Duration   int32  `help:"How long a single sent frame is displayed if nothing replaces it (in milliseconds)"`
+	IP       string `arg:"positional,required" help:"Hyperion Server IP"`
+	Port     int    `help:"Hyperion FlatBuffer Port"`
+	UDPPort  int    `help:"UDP Listen Port"`
+	Name     string `help:"Name of this stream un Hyperion"`
+	Priority int32  `help:"Priority of this stream in Hyperion"`
+	Duration int32  `help:"How long a single sent frame is displayed if nothing replaces it (in milliseconds)"`
 }
 
 //Description provides a short text that tells the user what the program does.
@@ -25,15 +25,16 @@ func (Args) Description() string {
 
 func main() {
 	args := Args{
-		Port:       19445,
-		UDPPort:    1337,
-		Name:       "HyperUDP",
-		Priority:   100,
-		Duration:   1000,
+		Port:     19445,
+		UDPPort:  1337,
+		Name:     "HyperUDP",
+		Priority: 100,
+		Duration: 1000,
 	}
 	arg.MustParse(&args)
 
-	data, _ := json.MarshalIndent(args, "", "    "); fmt.Println(string(data))
+	data, _ := json.MarshalIndent(args, "", "    ")
+	fmt.Println(string(data))
 
 	channel := make(chan []byte, 1)
 

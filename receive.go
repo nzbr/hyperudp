@@ -18,7 +18,7 @@ func recv(channel chan []byte, args Args) {
 	}
 
 	log.Println("Starting UDP listener")
-	
+
 	buff := make([]byte, 1024)
 	for {
 		n, _, err := sock.ReadFromUDP(buff)
